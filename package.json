@@ -11,7 +11,7 @@
     "clean": "rm -rf resources dist .edgeone",
     "proxy": "node scripts/proxy.js",
     "update": "hugo mod get ./...",
-    "deploy": "yarn run clean && edgeone pages deploy -n vuepress-vdoing"
+    "deploy": "yarn run clean && edgeone pages deploy -n hugo"
   },
   "keywords": [
     "hugo"
