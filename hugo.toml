@@ -28,26 +28,6 @@ ignoreLogs = ['warning-goldmark-raw-html']
     source = 'assets/.*\.(.*)$'
     target = '$1'
 
-# [caches]
-#   [caches.assets]
-#     dir = ':resourceDir/_gen'
-#     maxAge = -1
-#   [caches.getresource]
-#     dir = ':cacheDir/:project'
-#     maxAge = -1
-#   [caches.images]
-#     dir = ':resourceDir/_gen'
-#     maxAge = -1
-#   [caches.misc]
-#     dir = ':cacheDir/:project'
-#     maxAge = -1
-#   [caches.modulequeries]
-#     dir = ':cacheDir/modules'
-#     maxAge = '24h'
-#   [caches.modules]
-#     dir = ':cacheDir/modules'
-#     maxAge = -1
-
 # Hugo 会根据以下顺序查找 lastmod 的值：
 # 1、Front Matter 中的 lastmod 字段：如果存在，优先使用。
 # 2、文件的最后修改时间：如果没有在 Front Matter 中指定，且启用了 enableGitInfo，则使用文件的最后修改时间。
@@ -145,6 +125,7 @@ ignoreLogs = ['warning-goldmark-raw-html']
 
     reading_speed = 500                            # 这里设置你想要的每分钟字数，比如300字符/分钟
 
+    # 文档地址 https://github.com/divinerites/plausible-hugo
     [params.plausible]
       enable = true
       domain = "xiaoying.org.cn"
@@ -305,83 +286,10 @@ ignoreLogs = ['warning-goldmark-raw-html']
     
 [menu]
     [[menu.primary]]
-      name  = "编程"
-      url = "/code/"
-      identifier = "code"
-      weight = 10
-        # 子菜单项
-      [[menu.primary]]
-        name  = "前端"
-        url = "/front/"
-        identifier = "vue"
-        parent = "code"
-        weight = 20
-      [[menu.primary]]
-        name  = "后端"
-        url = "/springboot/"
-        identifier = "springboot"
-        parent = "code" 
-        weight = 30
-      [[menu.primary]]
-        name  = "嵌入式"
-        url = "/embedded/"
-        identifier = "c"
-        parent = "code"
-        weight = 40
-      [[menu.primary]]
-        name  = "python"
-        url = "/python/"
-        identifier = "python"
-        parent = "code" 
-        weight = 50
-
-    [[menu.primary]]
-        name  = "组件"
-        url = "/components/"
-        identifier = "components"
-        weight = 20
-      [[menu.primary]]
-        name  = "指南"
-        url = "/docs/guide/"
-        identifier = "qianduan"
-        parent = "components" 
-        weight = 40
-      [[menu.primary]]
-        name  = "使用"
-        url = "/components/"
-        identifier = "vue-components"
-        parent = "components" 
-        weight = 50
-      [[menu.primary]]
-        name  = "后端组件"
-        url = "/backend/"
-        identifier = "java"
-        parent = "components" 
-        weight = 60
-
-    [[menu.primary]]
-        name  = "项目实战"
-        url = "/projects-practice/"
-        identifier = "projects"
-        weight = 30
-      [[menu.primary]]
-        name  = "星球项目"
-        url = "/projects/"
-        identifier = "code-generator"
-        parent = "projects" 
-        weight = 50
-      [[menu.primary]]
-        name  = "开源项目"
-        url = "/opensource/"
-        identifier = "opensource"
-        parent = "projects" 
-        weight = 60
-    
-    [[menu.primary]]
-        name  = "资源"
-        url = "/tools/"
-        identifier = "tool"
-        weight = 90
+      name  = "指南"
+      url = "/docs/guide/"
+      identifier = "qianduan"
+      weight = 40
 
     [[menu.primary]]
       name  = "关于"
