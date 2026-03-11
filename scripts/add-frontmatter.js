@@ -38,8 +38,8 @@ const getMdFileTitle = (filename) => {
  * @param {string} filePath - 文件绝对路径
  * @returns {object} { filePath: 绝对路径, relativePath: 相对于 content/ 的路径 }
  */
-const getFileInfo = (filePath) => {
-  const contentDir = path.resolve('content'); // Hugo 内容目录的绝对路径
+const getFileInfo = (filePath, dir) => {
+  const contentDir = path.resolve(dir); // Hugo 内容目录的绝对路径
   const relativePath = path.relative(contentDir, filePath).replace(/\\/g, "/"); // 统一为 / 分隔符
   return { filePath, relativePath };
 };
@@ -431,7 +431,7 @@ const removeHeadingNumbers = (content) => {
  * @param {Function} [option.transform] - 自定义修改 frontmatter 的回调（可选）
  */
 const writeFrontmatterToFile = (filePaths, option) => {
-  const { transform, permalinkPrefix, categories, ignore = [], author } = option;
+  const { transform, permalinkPrefix, categories, ignore = [], author, contentDir } = option;
 
   for (const filePath of filePaths) {
     if (!filePath.endsWith(".md")) continue;
@@ -446,7 +446,7 @@ const writeFrontmatterToFile = (filePaths, option) => {
       const { data: existingFrontmatter, content: markdownContent } = matter(fileContent);
 
       const fileStat = fs.statSync(filePath);
-      const fileInfo = getFileInfo(filePath);
+      const fileInfo = getFileInfo(filePath, contentDir);
 
       // 默认 frontmatter（只会在缺失时补充，不覆盖已有字段）
       const defaultFrontmatter = {
@@ -694,6 +694,7 @@ const addToGitignore = (frontmatter, filePath, removeGitCached) => {
       name: "华总",
       link: "https://xiaoying.org.cn",
     },
+    contentDir: "content", // Hugo 内容目录（默认是项目根目录下的 content）
     ignore: ["_index.md", "index.md", "pages"], // 忽略的文件/目录（_index.md 是 Hugo 索引文件，建议忽略）
     // 权重计算配置
     weightStep: 10, // 权重递增步长
@@ -709,7 +710,7 @@ const addToGitignore = (frontmatter, filePath, removeGitCached) => {
   };
 
   // 2. 获取 content/ 目录下所有 .md 文件
-  const contentDir = path.resolve("content"); // Hugo 内容目录（默认是项目根目录下的 content）
+  const contentDir = path.resolve(config.contentDir); // Hugo 内容目录（默认是项目根目录下的 content）
   if (!fs.existsSync(contentDir)) {
     console.error(`❌ 未找到 Hugo 内容目录：${contentDir}`);
     process.exit(1); // 退出脚本，避免报错
