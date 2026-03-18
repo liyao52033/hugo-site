@@ -2,6 +2,10 @@ cnb.cool/liyao52033/hugopress/v2 v2.0.1 h1:5V+yHEf8540TDeME9Y2WOsPvTJqroPGnmVxig
 cnb.cool/liyao52033/hugopress/v2 v2.0.1/go.mod h1:lfmbRxLMboTi8VyF2sgh5nvBdYHdT7H7UscmqL/1ID8=
 cnb.cool/liyao52033/hugopress/v2 v2.0.2 h1:7k531wDJciPEmNGkwcpPN9Jl78B6F5yT1zE9aZT4s1o=
 cnb.cool/liyao52033/hugopress/v2 v2.0.2/go.mod h1:lfmbRxLMboTi8VyF2sgh5nvBdYHdT7H7UscmqL/1ID8=
+cnb.cool/liyao52033/hugopress/v2 v2.0.4 h1:Div0xznNL3i28yHGUe2SRRUwfrxLqk5WannEOgciBho=
+cnb.cool/liyao52033/hugopress/v2 v2.0.4/go.mod h1:lfmbRxLMboTi8VyF2sgh5nvBdYHdT7H7UscmqL/1ID8=
+cnb.cool/liyao52033/hugopress/v2 v2.0.5 h1:YlWEnbk6ZGbQntwczTifPYANHgHjlz435F4lrQFe2UU=
+cnb.cool/liyao52033/hugopress/v2 v2.0.5/go.mod h1:lfmbRxLMboTi8VyF2sgh5nvBdYHdT7H7UscmqL/1ID8=
 github.com/divinerites/plausible-hugo v1.22.0 h1:2pZheSaIMc+EtwcEeZv0ioU2qBOEZa1Ii7IaR/9II9k=
 github.com/divinerites/plausible-hugo v1.22.0/go.mod h1:cxr+YB3FUwbLon8KCs4pV4Ankbkq6lJxTQUpNb5KqPo=
 github.com/gohugoio/hugo-mod-bootstrap-scss/v5 v5.20300.20800 h1:j5myhhzYwIHTr5ctK96Elfgp5uRROvrlTzYwwe1nF8o=
